@@ -1,0 +1,1281 @@
+{
+  "name": "Intelligent Risk Predictor Flow",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1700, -100],
+      "id": "a7f268e3-d3e5-44fe-a00f-f548fa06957b",
+      "name": "Edit Fields8"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1760, 80],
+      "id": "98012723-8c14-4171-802a-bb4d46505072",
+      "name": "Edit Fields10"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1740, 260],
+      "id": "2a682c37-a092-4374-815f-db37d49492d4",
+      "name": "Edit Fields11"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1800, 540],
+      "id": "7460594b-acff-4383-aa21-96de2f922554",
+      "name": "Edit Fields12"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1460, 880],
+      "id": "011ef144-8108-4a45-b0e9-2154a7fc5618",
+      "name": "Edit Fields13"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "order-risk-check",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-2740, -20],
+      "id": "893d57cc-ec62-4570-8de3-fe7c60e8a499",
+      "name": "Webhook (Entry Point)",
+      "webhookId": "4c23d322-eefc-4c63-a7db-891df1aea005"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "263b1cc6-e3d6-4da3-93b9-466fcddbf73a",
+              "name": "order_id",
+              "value": "={{ $json.body.order_id }}",
+              "type": "string"
+            },
+            {
+              "id": "5651d063-d4fa-4e49-b63d-068ea680f7c7",
+              "name": "customer_email",
+              "value": "={{ $json.body.customer_email }}",
+              "type": "string"
+            },
+            {
+              "id": "d1f15f0e-7861-42ab-985a-1766485cd88a",
+              "name": "product_category",
+              "value": "={{ $json.body.product_category }}",
+              "type": "string"
+            },
+            {
+              "id": "88e01821-e58a-4b62-a0cc-4f76cf71837f",
+              "name": "order_value",
+              "value": "={{ $json.body.order_value }}",
+              "type": "number"
+            },
+            {
+              "id": "802cb0ad-18a3-469c-a45e-e8fe242bf6da",
+              "name": "order_date",
+              "value": "={{ $json.body.order_date }}",
+              "type": "string"
+            },
+            {
+              "id": "ab40d5e7-ff9f-4d81-b0cc-fcc210e3d3a6",
+              "name": "payment_mode",
+              "value": "={{ $json.body.payment_mode }}",
+              "type": "string"
+            },
+            {
+              "id": "f7e9246b-dc27-44fc-932d-bead885bad73",
+              "name": "customer_order_count",
+              "value": "={{ $json.body.customer_order_count }}",
+              "type": "number"
+            },
+            {
+              "id": "21d38404-89ce-495b-b849-0b66f8f25ae7",
+              "name": "region",
+              "value": "={{ $json.body.region }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-2540, -20],
+      "id": "a5c55381-0a79-4786-aa74-854c8eab2be4",
+      "name": "Data Extraction"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0382e247-657c-4f5d-a69d-64d08f634329",
+              "name": "risk_score",
+              "value": 0,
+              "type": "number"
+            },
+            {
+              "id": "3fd8c121-efe5-4135-833d-01858c9b7e3d",
+              "name": "risk_factors",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-2360, -20],
+      "id": "4e3e8226-0e9b-462e-a8ba-6f7ceec9b21a",
+      "name": "Risk Score Initialization"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c3fee140-cb6c-4a35-9a0d-89284b316c1d",
+              "leftValue": "={{ $('Data Extraction').item.json.payment_mode }}",
+              "rightValue": "COD",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-2180, -160],
+      "id": "b694aeb4-55ad-4e79-98ef-11a60e14c177",
+      "name": "COD Payment Check"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5f17ebfd-41c1-43b4-94ad-a4ed6e82fee3",
+              "leftValue": "={{ $('Data Extraction').item.json.order_value }}",
+              "rightValue": 5000,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-2180, 0],
+      "id": "ee796014-0c5c-4ddc-92d3-be9a697e308f",
+      "name": "Low Order Value Check"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "665a2852-2813-47d9-8a8a-9ce47c162fe1",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors ? $json.risk_factors + ', COD Payment' : 'COD Payment' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1680, -240],
+      "id": "0c00347b-0868-4a5b-b9f5-0c26ba663331",
+      "name": "COD Risk Increment"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "665a2852-2813-47d9-8a8a-9ce47c162fe1",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors.concat([' Low Order Value']) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1900, -20],
+      "id": "e337e729-9c29-427b-ac7d-2da711195cdc",
+      "name": "Low Value Risk Increment"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "aca9bfbe-8ef8-4bd0-91d6-eb020d8922be",
+              "leftValue": "={{ $('Data Extraction').item.json.product_category }}",
+              "rightValue": "Apparel",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "98b9b4bb-d930-43c7-af5d-b656e50b1057",
+              "leftValue": "={{ $('Data Extraction').item.json.product_category }}",
+              "rightValue": "Electronics",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-2180, 200],
+      "id": "8bce2df7-14fe-4dea-b716-cdb6715287cb",
+      "name": "Product Category Check"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "665a2852-2813-47d9-8a8a-9ce47c162fe1",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors.concat([' High-risk product category']) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1880, 200],
+      "id": "4470f65a-cc21-43f6-ae1c-ca50c2d685ef",
+      "name": "Category Risk Increment"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "76945649-f174-4828-889e-ec8439f00fac",
+              "leftValue": "={{ $('Data Extraction').item.json.customer_order_count }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-2160, 420],
+      "id": "dc4337cb-2f81-47a3-9051-295a948e0b34",
+      "name": "First-Time Buyer Check"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3896d45d-9ec0-45ab-bf5c-58c2d393fa1a",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "b5bde931-d41a-41fb-87bd-d530fbdca4b8",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors.concat([' First-Time-buyer']) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1880, 400],
+      "id": "720e0eb3-3da0-4c32-991e-c9587ef9da52",
+      "name": "First-Time Buyer Risk Increment"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1KxvATkTodI65Qm_IJEH_rFUfIWID1HMx5fOoXppWBNs",
+          "mode": "list",
+          "cachedResultName": "RiskyRegions",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KxvATkTodI65Qm_IJEH_rFUfIWID1HMx5fOoXppWBNs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KxvATkTodI65Qm_IJEH_rFUfIWID1HMx5fOoXppWBNs/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [-2160, 720],
+      "id": "5a257d4a-049f-4dd0-9a8c-b044b9f60e22",
+      "name": "Risky Regions Data",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H4NSRkiCjHE35fN6",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get previous order data from Edit Fields4\nconst orderData = $('Risk Score Initialization').item.json;\n\n// Get ALL Google Sheets data (not just first item)\nconst sheetData = $input.all(); // This gets all items\n\n// Extract regions from all items\nconst riskyRegions = sheetData.map(item => item.json.Region);\n\n// Return merged data\nreturn {\n  ...orderData,\n  risky_regions: riskyRegions\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1880, 740],
+      "id": "0ff67652-367b-43d4-8c0c-758798ccabc9",
+      "name": "Region Data Processing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c958dc12-181f-406c-bce8-12dccc9115c9",
+              "leftValue": "={{ $json.risky_regions.includes($('Data Extraction').first().json.region) }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-1700, 720],
+      "id": "4d864e8a-33b6-4d81-914e-e94e7a6437f9",
+      "name": "Risky Region Check"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee77bb73-acc0-43f4-8b0f-e811c7941ab0",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "665a2852-2813-47d9-8a8a-9ce47c162fe1",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors.concat([' Risky Region']) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-1480, 700],
+      "id": "aaabb772-522f-4b68-b2a4-e862a22c83dd",
+      "name": "Region Risk Increment"
+    },
+    {
+      "parameters": {
+        "numberInputs": 10
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [-1280, -160],
+      "id": "2b9021a3-9b29-4646-8199-f64f24466e10",
+      "name": "Data Consolidation"
+    },
+    {
+      "parameters": {
+        "jsCode": "let totalScore = 0;\nlet factors = [];\n\nfor (const item of $input.all()) {\n  totalScore += item.json.risk_score || 0;\n\n  if (item.json.risk_factors) {\n    factors.push(item.json.risk_factors.trim());\n  }\n}\n\n// Return single item\nreturn [\n  {\n    json: {\n      risk_score: totalScore,\n      risk_factors: factors.join(', ')\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1120, -180],
+      "id": "28f2b0d0-35ae-4d15-960e-45b1fbae12f5",
+      "name": "Final Risk Calculation"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2536175e-b3bf-44b2-90bb-3f75daf8fbda",
+              "leftValue": "={{ $json.risk_score }}",
+              "rightValue": 3,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-760, -160],
+      "id": "4337a6ca-e52b-4bf8-801b-777d5e77cf61",
+      "name": "Risk Threshold Decision"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "263b1cc6-e3d6-4da3-93b9-466fcddbf73a",
+              "name": "order_id",
+              "value": "=\t{{ $('Data Extraction').first().json.order_id }}",
+              "type": "string"
+            },
+            {
+              "id": "5651d063-d4fa-4e49-b63d-068ea680f7c7",
+              "name": "customer_email",
+              "value": "={{ $('Data Extraction').first().json.customer_email }}",
+              "type": "string"
+            },
+            {
+              "id": "d1f15f0e-7861-42ab-985a-1766485cd88a",
+              "name": "product_category",
+              "value": "={{ $('Data Extraction').first().json.product_category }}",
+              "type": "string"
+            },
+            {
+              "id": "88e01821-e58a-4b62-a0cc-4f76cf71837f",
+              "name": "order_value",
+              "value": "={{ $('Data Extraction').first().json.order_value }}",
+              "type": "number"
+            },
+            {
+              "id": "802cb0ad-18a3-469c-a45e-e8fe242bf6da",
+              "name": "order_date",
+              "value": "={{ $('Data Extraction').first().json.order_date }}",
+              "type": "string"
+            },
+            {
+              "id": "ab40d5e7-ff9f-4d81-b0cc-fcc210e3d3a6",
+              "name": "payment_mode",
+              "value": "={{ $('Data Extraction').first().json.payment_mode }}",
+              "type": "string"
+            },
+            {
+              "id": "f7e9246b-dc27-44fc-932d-bead885bad73",
+              "name": "customer_order_count",
+              "value": "={{ $('Data Extraction').first().json.customer_order_count }}",
+              "type": "number"
+            },
+            {
+              "id": "21d38404-89ce-495b-b849-0b66f8f25ae7",
+              "name": "region",
+              "value": "={{ $('Data Extraction').first().json.region }}",
+              "type": "string"
+            },
+            {
+              "id": "76fc0b7d-5d45-46df-814b-64bf0628d9a7",
+              "name": "risk_score",
+              "value": "={{ $json.risk_score }}",
+              "type": "string"
+            },
+            {
+              "id": "c5ada761-95e1-4e51-b197-b4d1b298a64d",
+              "name": "risk_factors",
+              "value": "={{ $json.risk_factors }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [-500, -180],
+      "id": "1e3f6c92-3b1c-4651-8def-b9abc08a1d34",
+      "name": "High-Risk Data Preparation"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1CUKeXkBY3ZZriaNbTnHE42OCODc9MlgagRnA2QbVb9Y",
+          "mode": "list",
+          "cachedResultName": "High Risk Log",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CUKeXkBY3ZZriaNbTnHE42OCODc9MlgagRnA2QbVb9Y/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1CUKeXkBY3ZZriaNbTnHE42OCODc9MlgagRnA2QbVb9Y/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "order_id": "={{ $json.order_id }}",
+            "customer_email": "={{ $json.customer_email }}",
+            "product_category": "={{ $json.product_category }}",
+            "order_value": "={{ $json.order_value }}",
+            "order_date": "={{ $json.order_date }}",
+            "payment_mode": "={{ $json.payment_mode }}",
+            "customer_order_count": "={{ $json.customer_order_count }}",
+            "region": "={{ $json.region }}",
+            "risk_score": "={{ $json.risk_score }}",
+            "risk_factors": "={{ $json.risk_factors }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "order_id",
+              "displayName": "order_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "customer_email",
+              "displayName": "customer_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_category",
+              "displayName": "product_category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "order_value",
+              "displayName": "order_value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "order_date",
+              "displayName": "order_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "payment_mode",
+              "displayName": "payment_mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "region",
+              "displayName": "region",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "customer_order_count",
+              "displayName": "customer_order_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "risk_score",
+              "displayName": "risk_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "risk_factors",
+              "displayName": "risk_factors",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [-360, -180],
+      "id": "825c2929-2fa4-402f-a337-24462fcd55e2",
+      "name": "High-Risk Logging",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H4NSRkiCjHE35fN6",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "thameemansarivrn@gmail.com",
+        "subject": "=High Risk Order Alert -{{ $json.order_id }}",
+        "emailType": "text",
+        "message": "=Dear Team, \n\nA new high-risk order has been detected based on the automated assessment system. Below are the order details:\n\n🧾 Order ID         : {{ $json.order_id }}\n📧 Customer Email   : {{ $json.customer_email }}\n📦 Product Category : {{ $json.product_category }}\n💰 Order Value      : ₹{{ $json.order_value }}\n📍 Region           : {{ $json.region }}\n🧮 Risk Score       : {{ $json.risk_score }}\n⚠️ Risk Factors     : {{ $json.risk_factors }}\n\nPlease review the order immediately.\n\n🔗 Risk Log Sheet: [View in Google Sheets] https://docs.google.com/spreadsheets/d/1CUKeXkBY3ZZriaNbTnHE42OCODc9MlgagRnA2QbVb9Y/edit?usp=sharing \n\nRegards,  \nRisk Predictor Bot  ",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [-140, -180],
+      "id": "3098d332-0d5c-433b-aa77-fd983ee30a50",
+      "name": "Email Alert",
+      "webhookId": "0a59a803-ae6e-430d-bcfe-7d43566bb52f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Q1oZPN2iJCisoVWo",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1NpQtVzShBtOzFfksjVrwkfmlnyZSt3BGdJNpHP1nRaI",
+          "mode": "list",
+          "cachedResultName": "Clean order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NpQtVzShBtOzFfksjVrwkfmlnyZSt3BGdJNpHP1nRaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1NpQtVzShBtOzFfksjVrwkfmlnyZSt3BGdJNpHP1nRaI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Order ID": "={{ $json.order_id }}",
+            "Customer Email": "={{ $json.customer_email }}",
+            "Product Category": "={{ $json[\"Product Category\"] }}",
+            "Order Value": "={{ $json[\"Order Value\"] }}",
+            "order_date": "={{ $json.order_date }}",
+            "Region": "={{ $json.Region }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Order ID",
+              "displayName": "Order ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer Email",
+              "displayName": "Customer Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Product Category",
+              "displayName": "Product Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Order Value",
+              "displayName": "Order Value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "order_date",
+              "displayName": "order_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Region",
+              "displayName": "Region",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [-520, 20],
+      "id": "b7e4fb1a-0c36-414a-800a-fc544ecd15c4",
+      "name": "Clean Order Logging",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H4NSRkiCjHE35fN6",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Edit Fields8": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Edit Fields10": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "Edit Fields11": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Edit Fields12": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 8
+          }
+        ]
+      ]
+    },
+    "Edit Fields13": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 9
+          }
+        ]
+      ]
+    },
+    "Webhook (Entry Point)": {
+      "main": [
+        [
+          {
+            "node": "Data Extraction",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Extraction": {
+      "main": [
+        [
+          {
+            "node": "Risk Score Initialization",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Risk Score Initialization": {
+      "main": [
+        [
+          {
+            "node": "COD Payment Check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Low Order Value Check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Product Category Check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "First-Time Buyer Check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Risky Regions Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COD Payment Check": {
+      "main": [
+        [
+          {
+            "node": "COD Risk Increment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Low Order Value Check": {
+      "main": [
+        [
+          {
+            "node": "Low Value Risk Increment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COD Risk Increment": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Low Value Risk Increment": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Product Category Check": {
+      "main": [
+        [
+          {
+            "node": "Category Risk Increment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Category Risk Increment": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "First-Time Buyer Check": {
+      "main": [
+        [
+          {
+            "node": "First-Time Buyer Risk Increment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "First-Time Buyer Risk Increment": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Risky Regions Data": {
+      "main": [
+        [
+          {
+            "node": "Region Data Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Region Data Processing": {
+      "main": [
+        [
+          {
+            "node": "Risky Region Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Risky Region Check": {
+      "main": [
+        [
+          {
+            "node": "Region Risk Increment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Region Risk Increment": {
+      "main": [
+        [
+          {
+            "node": "Data Consolidation",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Data Consolidation": {
+      "main": [
+        [
+          {
+            "node": "Final Risk Calculation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Final Risk Calculation": {
+      "main": [
+        [
+          {
+            "node": "Risk Threshold Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Risk Threshold Decision": {
+      "main": [
+        [
+          {
+            "node": "High-Risk Data Preparation",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Clean Order Logging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High-Risk Data Preparation": {
+      "main": [
+        [
+          {
+            "node": "High-Risk Logging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High-Risk Logging": {
+      "main": [
+        [
+          {
+            "node": "Email Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0e38b0b1-8082-4720-9216-9dbaa25de13e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5b840e19a1128d4d04b10d86f8dd66b83371ccef0e8aef25075b2f19d197e130"
+  },
+  "id": "bdeBsrTlDWAf7jH1",
+  "tags": []
+}
